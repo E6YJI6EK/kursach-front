@@ -1,17 +1,13 @@
-import { useState } from "react";
-import "./App.css";
-import { Button } from "./components/ui/button";
+import { RouteApp } from '@/RouteApp.tsx';
+import { ProviderConfiguredStore } from '@/providers/configured-store.tsx';
+import { Toaster } from '@/components/ui/toaster.tsx';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const onClick = () => {
-    setCount((prev) => prev + 1);
-  };
   return (
-    <>
-      <p className="text-base font-semibold text-foreground">{count}</p>
-      <Button onClick={onClick}>lsdhjfkjadhf</Button>
-    </>
+    <ProviderConfiguredStore>
+      <Toaster />
+      <RouteApp />
+    </ProviderConfiguredStore>
   );
 }
 
